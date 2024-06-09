@@ -1,0 +1,14 @@
+INPUT(
+./debug\qrc_resource.o
+./debug\main.o
+./debug\Map.o
+./debug\Enemy.o
+./debug\Simulation.o
+./debug\Defense.o
+./debug\widget.o
+./debug\moc_Map.o
+./debug\moc_Enemy.o
+./debug\moc_Simulation.o
+./debug\moc_Defense.o
+./debug\moc_widget.o
+);

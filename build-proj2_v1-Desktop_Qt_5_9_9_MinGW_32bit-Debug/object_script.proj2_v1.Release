@@ -1,0 +1,14 @@
+INPUT(
+./release\qrc_resource.o
+./release\main.o
+./release\Map.o
+./release\Enemy.o
+./release\Simulation.o
+./release\Defense.o
+./release\widget.o
+./release\moc_Map.o
+./release\moc_Enemy.o
+./release\moc_Simulation.o
+./release\moc_Defense.o
+./release\moc_widget.o
+);
