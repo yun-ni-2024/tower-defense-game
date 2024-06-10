@@ -23,7 +23,7 @@
 #include <QString>
 #include <QPicture>
 #include <QMediaPlayer>
-#include <QSound>
+#include <QSoundEffect>
 
 using namespace std;
 
@@ -55,20 +55,20 @@ const int CLAW_OFFSET_X = (LEN - CLAW_LEN) / 2 + OFFSET;
 const int CLAW_OFFSET_Y = (LEN - CLAW_WID) / 2 + OFFSET;
 const int MAX_CLAW_NUM = 1000;
 const int BONUS_PROB = 30;
-#define MAP_BLANK_GRAPH QIcon(":/blank.ico")
-#define MAP_PATH_GRAPH QIcon(":/path.ico")
-#define MAP_SIDE_GRAPH  QIcon(":/side.ico")
-#define ENEMY_GRAPH QIcon(":/enemy.ico")
-#define ENEMY_GRAPH1 QIcon(":/enemy1.ico")
-#define ENEMY_GRAPH2 QIcon(":/enemy2.ico")
-#define ENEMY_GRAPH3 QIcon(":/enemy3.ico")
-#define MELEE_GRAPH QIcon(":/melee.ico")
-#define ARCHER_GRAPH QIcon(":/archer.ico")
-#define MONEY_GRAPH QIcon(":/coin2.ico")
-#define HEART_GRAPH QIcon(":/heart.ico")
-#define FROZEN_GRAPH QIcon(":/frozen.ico")
-#define BLOOD_GRAPH QIcon(":/blood.ico")
-#define SLOW_GRAPH QIcon(":/slow.ico")
+#define MAP_BLANK_GRAPH QIcon(":/resource/blank.ico")
+#define MAP_PATH_GRAPH QIcon(":/resource/path.ico")
+#define MAP_SIDE_GRAPH  QIcon(":/resource/side.ico")
+#define ENEMY_GRAPH QIcon(":/resource/enemy.ico")
+#define ENEMY_GRAPH1 QIcon(":/resource/enemy1.ico")
+#define ENEMY_GRAPH2 QIcon(":/resource/enemy2.ico")
+#define ENEMY_GRAPH3 QIcon(":/resource/enemy3.ico")
+#define MELEE_GRAPH QIcon(":/resource/melee.ico")
+#define ARCHER_GRAPH QIcon(":/resource/archer.ico")
+#define MONEY_GRAPH QIcon(":/resource/coin2.ico")
+#define HEART_GRAPH QIcon(":/resource/heart.ico")
+#define FROZEN_GRAPH QIcon(":/resource/frozen.ico")
+#define BLOOD_GRAPH QIcon(":/resource/blood.ico")
+#define SLOW_GRAPH QIcon(":/resource/slow.ico")
 //STANDARD CONSTANTS//STANDARD CONSTANTS//STANDARD CONSTANTS//
 
 extern int ENEMY_NUM;

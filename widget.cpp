@@ -14,18 +14,24 @@ Widget::Widget(QWidget *parent)
     setUpInit();
     extenInit();
 
-    bgm = new QSound(":/TheDawn.wav", this);
-    bgm->setLoops(-1);
+    bgm = new QSoundEffect(this);
+    bgm->setSource(QUrl::fromLocalFile(":/resource/TheDawn.wav"));
+    bgm->setLoopCount(QSoundEffect::Infinite);
     bgm->play();
-    bgm1 = new QSound(":/GetUp.wav", this);
-    bgm2 = new QSound(":/MistyMoon.wav", this);
 
-    sound1 = new QSound(":/melee.wav", this);
-    sound2 = new QSound(":/archer.wav", this);
+    bgm1 = new QSoundEffect(this);
+    bgm1->setSource(QUrl::fromLocalFile(":/resource/GetUp.wav"));
+    bgm2 = new QSoundEffect(this);
+    bgm2->setSource(QUrl::fromLocalFile(":/resource/MistyMoon.wav"));
+
+    sound1 = new QSoundEffect(this);
+    sound1->setSource(QUrl::fromLocalFile(":/resource/melee.wav"));
+    sound2 = new QSoundEffect(this);
+    sound2->setSource(QUrl::fromLocalFile(":/resource/archer.wav"));
 
     QLabel* homepage = new QLabel(this);
     homepage->setFixedSize(DISPLAY_WID + STATUS_WID, DISPLAY_HEI);
-    homepage->setPixmap(QPixmap(":/homepage.jpg"));
+    homepage->setPixmap(QPixmap(":/resource/homepage.jpg"));
     homepage->move(0, 0);
     homepage->show();
 
@@ -58,7 +64,7 @@ Widget::Widget(QWidget *parent)
 
     connect(Edit, &QPushButton::clicked, this, [=](){
         bgm->stop();
-        bgm1->setLoops(-1);
+        bgm1->setLoopCount(QSoundEffect::Infinite);
         bgm1->play();
 
         EditWindow->show();
@@ -122,8 +128,20 @@ Widget::~Widget()
 
 void Widget::fileRead()
 {
+    qDebug() << "Readling file";
+
     ifstream in_file("map.txt", ios::in);
-    if(!in_file) exit(-1);
+    if(!in_file)
+    {
+        ENEMY_NUM = 20;
+        AFFIX1_PROB = 5;
+        AFFIX2_PROB = 5;
+        AFFIX3_PROB = 5;
+        INIT_AFFIX = 0;
+        qDebug() << "Readling empty file over";
+        return;
+    }
+
     string ss;
     in_file >> ss >> ss >> ss >> ENEMY_NUM;
     in_file >> ss >> ss >> AFFIX1_PROB;
@@ -161,6 +179,7 @@ void Widget::fileRead()
         maps.push_back(map);
     }
 
+    qDebug() << "Readling file over";
 }
 
 void Widget::fileWrite()
@@ -193,7 +212,7 @@ void Widget::catalogueInit()
 {
     Catalogue = new QLabel(this);
     Catalogue->setFixedSize(DISPLAY_WID + STATUS_WID, DISPLAY_HEI);
-    Catalogue->setPixmap(QPixmap(":/catalogue.jpg"));
+    Catalogue->setPixmap(QPixmap(":/resource/catalogue.jpg"));
     Catalogue->move(0, 0);
     Catalogue->close();
 
@@ -214,7 +233,7 @@ void Widget::catalogueInit()
             qDebug() << "start load";
 
             bgm->stop();
-            bgm2->setLoops(-1);
+            bgm2->setLoopCount(QSoundEffect::Infinite);
             bgm2->play();
 
             load(maps[i]);
@@ -242,7 +261,7 @@ void Widget::editWindowInit()
 {
     EditWindow = new QLabel(this);
     EditWindow->setFixedSize(DISPLAY_WID + STATUS_WID, DISPLAY_HEI);
-    EditWindow->setPixmap(QPixmap(":/editwindow.jpg"));
+    EditWindow->setPixmap(QPixmap(":/resource/editwindow.jpg"));
     EditWindow->move(0, 0);
     EditWindow->close();
 
@@ -356,7 +375,7 @@ void Widget::editWindowInit()
         EditWindow->close();
 
         bgm1->stop();
-        bgm->setLoops(-1);
+        bgm->setLoopCount(QSoundEffect::Infinite);
         bgm->play();
     });
 }
@@ -654,7 +673,7 @@ void Widget::load(Map* map)
 
     background = new QLabel(this);
     background->setFixedSize(DISPLAY_WID + STATUS_WID, DISPLAY_WID);
-    background->setPixmap(QPixmap(":/background.jpg"));
+    background->setPixmap(QPixmap(":/resource/background.jpg"));
     background->move(0, 0);
     background->show();
 
@@ -1878,7 +1897,7 @@ void Widget::remake()
         qDebug() << "Done";
 
         bgm2->stop();
-        bgm->setLoops(-1);
+        bgm->setLoopCount(QSoundEffect::Infinite);
         bgm->play();
     });
 }

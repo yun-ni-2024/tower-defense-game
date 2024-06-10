@@ -17,8 +17,8 @@ class Widget : public QWidget
 
 private:
     Ui::Widget *ui;
-    QSound* bgm, * bgm1, * bgm2;
-    QSound* sound1, * sound2;
+    QSoundEffect* bgm, * bgm1, * bgm2;
+    QSoundEffect* sound1, * sound2;
     QLabel* Catalogue;
     QLabel* EditWindow;
     QLabel* SetUpWindow;
