@@ -32,18 +32,18 @@ To compile and run the Tower Defense game, follow these steps:
 
 2. **Open the Project in Qt Creator**:
 - Launch Qt Creator.
-- Open the project by navigating to File -> Open File or Project... and selecting the tower-defense-game.pro file in the cloned repository.
+- Open the project by navigating to `File -> Open File or Project...` and selecting the `tower-defense-game.pro` file in the cloned repository.
 
 3. **Configure the Project**:
 - Ensure you have a Kit configured for Desktop development using MinGW (or another compatible compiler).
-- If you haven't set up a Kit, go to Tools -> Options -> Kits and configure one using your installed compiler and Qt version.
+- If you haven't set up a Kit, go to `Tools -> Options -> Kits` and configure one using your installed compiler and Qt version.
 
 4. **Build the Project**:
-- In Qt Creator, click the Build button (hammer icon) or go to Build -> Build Project "tower-defense-game".
-- If you encounter an error related to resources, ensure that the paths in your .pro file are correct and point to the actual resource files.
+- In Qt Creator, click the Build button (hammer icon) or go to `Build -> Build Project "tower-defense-game"`.
+- If you encounter an error related to resources, ensure that the paths in your `.pro` file are correct and point to the actual resource files.
 
 5. **Run the Game**:
-- After successfully building the project, click the Run button (green arrow) or go to Build -> Run.
+- After successfully building the project, click the Run button (green arrow) or go to `Build -> Run`.
 - The game window should open, and you can start playing the Tower Defense game.
 
 ### Troubleshooting
