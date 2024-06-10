@@ -47,52 +47,50 @@ To compile and run the Tower Defense game, follow these steps:
 - The game window should open, and you can start playing the Tower Defense game.
 
 ### Troubleshooting
-Resource Errors: If you encounter errors related to resource files, ensure the paths in the .pro file are correct. For example:
+- Resource Errors: If you encounter errors related to resource files, ensure the paths in the `.pro` file are correct. For example:
+  ```bash
+    RESOURCES += \
+        resource.qrc
+  ```
+- Out of Memory Errors: If you encounter out-of-memory errors during compilation, you might need to adjust your system settings or reduce the number of parallel build processes.
 
-pro
-复制代码
-RESOURCES += \
-    resources/resource.qrc
-Out of Memory Errors: If you encounter out-of-memory errors during compilation, you might need to adjust your system settings or reduce the number of parallel build processes.
+- Missing Files: If the game cannot find certain files, ensure all necessary files (e.g., `map.txt`) are in the correct directories.
 
-Missing Files: If the game cannot find certain files, ensure all necessary files (e.g., map.txt) are in the correct directories.
-
-Example Project Configuration File (.pro)
-Here’s an example .pro file for your project:
-
-pro
-复制代码
-QT       += core gui multimedia
-
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-
-CONFIG += c++17
-
-QMAKE_CXXFLAGS += -Wa,-mbig-obj
-
-SOURCES += \
-    main.cpp \
-    widget.cpp \
-    Map.cpp \
-    Enemy.cpp \
-    Simulation.cpp \
-    Defense.cpp
-
-HEADERS += \
-    widget.h \
-    Map.h \
-    Enemy.h \
-    Simulation.h \
-    Defense.h
-
-FORMS += \
-    widget.ui
-
-RESOURCES += \
-    resources/resource.qrc
-
-# Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
+### Example Project Configuration File (.pro)
+- Here’s an example `.pro` file for your project:
+  ```pro
+    QT += core gui multimedia
+    
+    greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+    
+    CONFIG += c++17
+    
+    QMAKE_CXXFLAGS += -Wa,-mbig-obj
+    
+    SOURCES += \
+        main.cpp \
+        widget.cpp \
+        Map.cpp \
+        Enemy.cpp \
+        Simulation.cpp \
+        Defense.cpp
+    
+    HEADERS += \
+        widget.h \
+        Map.h \
+        Enemy.h \
+        Simulation.h \
+        Defense.h
+    
+    FORMS += \
+        widget.ui
+    
+    RESOURCES += \
+        resources/resource.qrc
+    
+    # Default rules for deployment.
+    qnx: target.path = /tmp/$${TARGET}/bin
+    else: unix:!android: target.path = /opt/$${TARGET}/bin
+    !isEmpty(target.path): INSTALLS += target
+  ```
 By following these steps, you should be able to compile and run the Tower Defense game successfully. If you encounter any issues, feel free to consult the Qt documentation or seek help from the community.
