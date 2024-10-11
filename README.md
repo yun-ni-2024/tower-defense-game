@@ -94,3 +94,11 @@ To compile and run the Tower Defense game, follow these steps:
     !isEmpty(target.path): INSTALLS += target
   ```
 By following these steps, you should be able to compile and run the Tower Defense game successfully. If you encounter any issues, feel free to consult the Qt documentation or seek help from the community.
+
+## Effect Display
+
+Here are some images to showcase the effects:
+
+![](rsc/1.png)
+![](rsc/2.png)
+![](rsc/3.png)
